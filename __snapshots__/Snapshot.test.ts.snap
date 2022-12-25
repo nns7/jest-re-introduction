@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Snapshot Testing toMatchSnapshot - Property Matchers 1`] = `
+{
+  "created": Any<Number>,
+  "id": StringMatching /\\^\\[\\\\da-f\\]\\{8\\}-\\[\\\\da-f\\]\\{4\\}-\\[\\\\da-f\\]\\{4\\}-\\[\\\\da-f\\]\\{4\\}-\\[\\\\da-f\\]\\{12\\}\\$/,
+  "type": "jest",
+}
+`;
+
 exports[`Snapshot Testing toMatchSnapshot - インライン 1`] = `
 "
     <div class="container">
