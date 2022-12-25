@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`モック用のマッチャー 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      1,
+    ],
+    [
+      2,
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": 100,
+    },
+    {
+      "type": "return",
+      "value": 100,
+    },
+  ],
+}
+`;
