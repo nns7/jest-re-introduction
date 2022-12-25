@@ -71,3 +71,8 @@ test("toBeUndefined/toBeNull/toBeDefined", () => {
   expect("foo").not.toBeNull();
   expect(undefined).not.toBeNull(); // undefinedはnullではない
 });
+
+test("toHaveLength", () => {
+  expect("foo").toHaveLength(3);
+  expect([1, 2, 3]).toHaveLength(3);
+});
