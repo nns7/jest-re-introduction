@@ -13,3 +13,7 @@ bower_components
 psd
 thumb
 sketch
+
+### jest-html-reporters ###
+jest-html-reporters-attach
+jest_html_reporters.html
