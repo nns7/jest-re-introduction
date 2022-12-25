@@ -48,3 +48,16 @@ test("expectマッチャーユーティリティ利用", () => {
     array: expect.arrayContaining([1, 2]), // 配列に要素が含まれていること
   });
 });
+
+test("toBeTruthy/toBeFalsy", () => {
+  expect(true).toBeTruthy();
+  expect(false).toBeFalsy();
+
+  expect("foo").toBeTruthy(); // 空文字以外はtruthy
+  expect(1).toBeTruthy(); // 空文字以外はtruthy
+  expect({}).toBeTruthy(); // オブジェクトはtruthy
+  expect([]).toBeTruthy(); // 配列はtruthy
+  expect(undefined).toBeFalsy(); // undefined/nullはfalsy
+  expect(0).toBeFalsy(); // 0はfalsy
+  expect("").toBeFalsy(); // 空文字はfalsy
+});
