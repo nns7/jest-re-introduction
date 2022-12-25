@@ -76,3 +76,9 @@ test("toHaveLength", () => {
   expect("foo").toHaveLength(3);
   expect([1, 2, 3]).toHaveLength(3);
 });
+
+test("toMatch", () => {
+  expect("foo12345").toMatch(/foo\d{5}/); // 正規表現・部分一致
+  expect("foo12345").toMatch(/^foo\d{5}$/); // 正規表現・完全一致
+  expect("foo12345").toMatch("foo"); // 部分一致
+});
