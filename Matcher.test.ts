@@ -87,3 +87,33 @@ test("toContain/toContainEqual", () => {
   expect(["foo", "bar"]).toContain("foo");
   expect([{ foo: "bar" }, { foo: "hoge" }]).toContainEqual({ foo: "bar" });
 });
+
+test("toThrow", () => {
+  class CustomError extends Error {}
+  const throwError = (message: string) => {
+    throw new CustomError(message);
+  };
+  expect(() => throwError("")).toThrow(); // エラーになることを検証
+  expect(() => throwError("")).toThrow(CustomError); // 送出したエラーの型判定
+  expect(() => throwError("エラー発生")).toThrow(new Error("エラー発生")); // Errorオブジェクト（messageプロパティ一致）
+  expect(() => throwError("エラー発生")).toThrow("エラー発生"); // messageプロパティの値
+  expect(() => throwError("エラー発生")).toThrow(/^エラー.*$/); // messageプロパティの値（正規表現）
+});
+
+test("message以外を検査", () => {
+  class CustomError extends Error {
+    constructor(message: string, readonly code: string) {
+      super(message);
+    }
+  }
+  const throwError = (message: string, code: string) => {
+    throw new CustomError(message, code);
+  };
+  try {
+    throwError("エラー発生", "E001");
+    fail();
+  } catch (e) {
+    expect(e).toBeInstanceOf(CustomError);
+    expect((e as CustomError).code).toBe("E001");
+  }
+});
