@@ -61,3 +61,13 @@ test("toBeTruthy/toBeFalsy", () => {
   expect(0).toBeFalsy(); // 0はfalsy
   expect("").toBeFalsy(); // 空文字はfalsy
 });
+
+test("toBeUndefined/toBeNull/toBeDefined", () => {
+  expect(undefined).toBeUndefined();
+  expect("foo").toBeDefined();
+  expect(null).toBeDefined(); // nullはundefinedではない
+
+  expect(null).toBeNull();
+  expect("foo").not.toBeNull();
+  expect(undefined).not.toBeNull(); // undefinedはnullではない
+});
