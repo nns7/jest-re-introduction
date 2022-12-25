@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Snapshot Testing toMatchSnapshot - インライン 1`] = `
+"
+    <div class="container">
+      <article>
+        <p>UI生成結果<p>
+      </article>
+    </div>
+    "
+`;
+
 exports[`Snapshot Testing toMatchSnapshot - 基本 1`] = `
 "
     <div class="container">
