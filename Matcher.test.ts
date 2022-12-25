@@ -82,3 +82,8 @@ test("toMatch", () => {
   expect("foo12345").toMatch(/^foo\d{5}$/); // 正規表現・完全一致
   expect("foo12345").toMatch("foo"); // 部分一致
 });
+
+test("toContain/toContainEqual", () => {
+  expect(["foo", "bar"]).toContain("foo");
+  expect([{ foo: "bar" }, { foo: "hoge" }]).toContainEqual({ foo: "bar" });
+});
